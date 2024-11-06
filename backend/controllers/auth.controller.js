@@ -79,11 +79,11 @@ export const login = async (req, res) => {
         email:user.email,
         followers:user.followers,
         following:user.following,
-        profileImage:user.profileImage,
+        profileImg:user.profileImg,
         coverImg:user.coverImg,
     });
     
-    
+    console.log("User logged in successfully");
    } catch (error) {
     console.log("Error in login controller ",error.message);
         res.status(500).json({error:"Server Error",});
