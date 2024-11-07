@@ -72,7 +72,7 @@ export const login = async (req, res) => {
     }
     generateTokenAndSetCookie(user._id,res);
 
-    res.status(200).json({
+    return res.status(200).json({
         _id:user._id,
         fullName:user.fullName,
         username:user.username,
@@ -86,7 +86,7 @@ export const login = async (req, res) => {
     console.log("User logged in successfully");
    } catch (error) {
     console.log("Error in login controller ",error.message);
-        res.status(500).json({error:"Server Error",});
+        return res.status(500).json({error:"Server Error",});
    }
 };
 
